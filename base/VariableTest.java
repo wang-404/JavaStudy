@@ -10,6 +10,8 @@ package baseStudy;
  	byte、char、short-->int-->long-->float-->double
  
  2、强制类型转换：自动类型提升运算的逆运算
+ 	1、需要使用强转符()
+ 	2、强制类型转换，可能导致精度损失
  	
  	
  */
@@ -50,8 +52,16 @@ public class VariableTest {
 		//*********************
 		
 		double d2 = 12.3;
-		int i5 = (int)d2;
+		int i5 = (int)d2;//截断操作
 		System.out.println(i5);
+		//没有精度损失
+		long l1 = 123;
+		short s5 = (short)l1;
+		//精度损失
+		int i6 = 128;
+		byte b3 = (byte)i6;
+		System.out.println(b3);//-128
+				
 	}
 
 }
